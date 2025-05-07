@@ -1,0 +1,194 @@
+:root {
+  --color-primary: #f9a8d4;
+  --color-secondary: #fef08a;
+  --color-accent: #86efac;
+  --color-dark: #1e293b;
+  --color-light: #ffffff;
+  --font-sans: 'Segoe UI', sans-serif;
+}
+
+/* RESET Y ESTILOS BÁSICOS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #fce7f3;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('https://images.unsplash.com/photo-1586859833689-96cdfe7cc0c5');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  z-index: 2;
+  font-size: 2.5rem;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* CAROUSEL */
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  margin-top: 2rem;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+/* SECCIONES DE ACCIÓN */
+main .action-section {
+  margin-bottom: 3rem;
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: relative;
+  border-left: 10px solid var(--color-primary);
+}
+
+main .action-section h2 {
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+/* BOTONES ANIMADOS */
+.donate-btn,
+.contact-section a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -50% }
+  50% { left: 100% }
+  100% { left: 100% }
+}
+
+.donate-btn:hover {
+  transform: scale(1.05);
+  background-color: #bef264;
+}
+
+/* SECCIONES ADICIONALES */
+.about-section,
+.contact-section,
+.donate-section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background-color: var(--color-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 3rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  font-weight: bold;
+}
